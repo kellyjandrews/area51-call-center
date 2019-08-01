@@ -1,218 +1,139 @@
 [{
-  "id": "6efc31f8.ca128",
+  "id": "b32f0aa8.dc0908",
   "type": "tab",
-  "label": "Flow 1",
+  "label": "Flow 3",
   "disabled": false,
   "info": ""
 }, {
-  "id": "c91a852a.8013b8",
-  "type": "subflow",
-  "name": "Events Handler",
-  "info": "",
-  "category": "",
-  "in": [],
-  "out": [],
-  "env": []
-}, {
-  "id": "c7af81cd.c652f",
-  "type": "subflow",
-  "name": "Incoming Call",
-  "info": "",
-  "category": "",
-  "in": [{
-    "x": 299,
-    "y": 238,
-    "wires": [{
-      "id": "f1b000c9.98fea"
-    }]
-  }],
-  "out": [],
-  "env": []
-}, {
-  "id": "e5fe838.d55d38",
-  "type": "subflow",
-  "name": "Handle DTMF Tones",
-  "info": "",
-  "category": "",
-  "in": [],
-  "out": [{
-    "x": 357,
-    "y": 44,
-    "wires": [{
-      "id": "ee6386.70b76c78",
-      "port": 2
-    }]
-  }],
-  "env": []
-}, {
-  "id": "673b7d76.e54bc4",
-  "type": "subflow",
-  "name": "Handle Recordings",
-  "info": "",
-  "category": "",
-  "in": [],
-  "out": [],
-  "env": []
-}, {
-  "id": "64450654.a30388",
-  "type": "nexmovoiceapp",
-  "z": "",
-  "name": "Area 51 Call Center"
-}, {
-  "id": "d763956f.dded88",
-  "type": "aws-config",
-  "z": ""
-}, {
-  "id": "c579689e.3235f8",
+  "id": "9b8d617c.11d15",
   "type": "voice webhook",
-  "z": "c7af81cd.c652f",
+  "z": "b32f0aa8.dc0908",
   "name": "",
   "url": "/answer",
   "method": "post",
-  "x": 147,
-  "y": 104,
+  "x": 141,
+  "y": 198,
   "wires": [
-    ["87948df4.ca72d", "f1b000c9.98fea"]
+    ["7c90eb33.0654b4", "98437c9f.4bc2a"]
   ]
 }, {
-  "id": "906456e2.32aca8",
+  "id": "47878a0b.4abdf4",
   "type": "voice webhook",
-  "z": "c91a852a.8013b8",
+  "z": "b32f0aa8.dc0908",
   "name": "",
   "url": "/event",
   "method": "post",
-  "x": 200,
-  "y": 108,
+  "x": 132,
+  "y": 593,
   "wires": [
-    ["e2288f42.914dd", "b12f704a.b9416"]
+    ["10199f2a.5b5a11", "2e820239.082a8e"]
   ]
 }, {
-  "id": "87948df4.ca72d",
+  "id": "10199f2a.5b5a11",
   "type": "debug",
-  "z": "c7af81cd.c652f",
-  "name": "answer",
+  "z": "b32f0aa8.dc0908",
+  "name": "Events",
   "active": false,
   "tosidebar": true,
   "console": false,
   "tostatus": false,
-  "complete": "call",
-  "targetType": "msg",
-  "x": 393,
-  "y": 67,
+  "complete": "true",
+  "targetType": "full",
+  "x": 217,
+  "y": 535,
   "wires": []
 }, {
-  "id": "f1b000c9.98fea",
+  "id": "7c90eb33.0654b4",
+  "type": "debug",
+  "z": "b32f0aa8.dc0908",
+  "name": "Answer",
+  "active": false,
+  "tosidebar": true,
+  "console": false,
+  "tostatus": false,
+  "complete": "true",
+  "targetType": "full",
+  "x": 225,
+  "y": 142,
+  "wires": []
+}, {
+  "id": "2e820239.082a8e",
+  "type": "http response",
+  "z": "b32f0aa8.dc0908",
+  "name": "",
+  "statusCode": "200",
+  "headers": {},
+  "x": 304,
+  "y": 593,
+  "wires": []
+}, {
+  "id": "98437c9f.4bc2a",
   "type": "talk",
-  "z": "c7af81cd.c652f",
-  "text": "<speak> <p>Thank you for calling the Area 51 alien invasion hotline.</p> <p>If you would like to report a sighting, press 1.</p> <p>If you would like to volunteer, press 2.</p> <p>If you are currently being abducted, press 0 to speak to an operator.</p> <p>Press 9 to hear these options again.</p> </speak>",
+  "z": "b32f0aa8.dc0908",
+  "text": "<speak><p>Thank you for calling the Area 51 alien invasion hotline.</p><p>If you would like to report a sighting, press 1.</p><p>If you are currently being abducted, press 2.</p></speak>",
   "voicename": "Kimberly",
   "bargein": true,
   "loop": "",
   "level": "",
-  "x": 390,
-  "y": 137,
+  "x": 318,
+  "y": 197,
   "wires": [
-    ["84aab4a3.6d4128"]
+    ["3525d5c3.02acda"]
   ]
 }, {
-  "id": "af6e519e.72bdb",
+  "id": "27515db0.b14ed2",
   "type": "return ncco",
-  "z": "c7af81cd.c652f",
+  "z": "b32f0aa8.dc0908",
   "name": "",
-  "x": 675,
-  "y": 137,
+  "x": 650,
+  "y": 197,
   "wires": []
 }, {
-  "id": "e2288f42.914dd",
-  "type": "http response",
-  "z": "c91a852a.8013b8",
-  "name": "",
-  "statusCode": "200",
-  "headers": {},
-  "x": 414,
-  "y": 139,
-  "wires": []
-}, {
-  "id": "b12f704a.b9416",
-  "type": "debug",
-  "z": "c91a852a.8013b8",
-  "name": "event",
-  "active": false,
-  "tosidebar": true,
-  "console": false,
-  "tostatus": false,
-  "complete": "call",
-  "targetType": "msg",
-  "x": 404,
-  "y": 80,
-  "wires": []
-}, {
-  "id": "84aab4a3.6d4128",
+  "id": "3525d5c3.02acda",
   "type": "input",
-  "z": "c7af81cd.c652f",
-  "eventurl": "https://kja.ngrok.io/dtmf-input",
+  "z": "b32f0aa8.dc0908",
+  "eventurl": "https://kja.ngrok.io/dtmf",
   "eventmethod": "post",
   "timeout": "1",
   "maxdigits": "",
   "submitonhash": false,
-  "x": 533,
-  "y": 137,
+  "x": 456,
+  "y": 196,
   "wires": [
-    ["af6e519e.72bdb"]
+    ["27515db0.b14ed2"]
   ]
 }, {
-  "id": "3ca95a2e.c86156",
+  "id": "d64d19cd.e9b2f8",
   "type": "http in",
-  "z": "e5fe838.d55d38",
+  "z": "b32f0aa8.dc0908",
   "name": "",
-  "url": "/dtmf-input",
+  "url": "/dtmf",
   "method": "post",
   "upload": false,
   "swaggerDoc": "",
-  "x": 102,
-  "y": 158,
+  "x": 151,
+  "y": 385,
   "wires": [
-    ["fde5cdb0.d56b3", "ee6386.70b76c78"]
+    ["d5f75c44.9f691", "da97a343.1acfc"]
   ]
 }, {
-  "id": "fde5cdb0.d56b3",
+  "id": "d5f75c44.9f691",
   "type": "debug",
-  "z": "e5fe838.d55d38",
-  "name": "dtmf",
+  "z": "b32f0aa8.dc0908",
+  "name": "DTMF",
   "active": true,
   "tosidebar": true,
   "console": false,
   "tostatus": false,
   "complete": "payload",
   "targetType": "msg",
-  "x": 106,
-  "y": 248,
+  "x": 126,
+  "y": 329,
   "wires": []
 }, {
-  "id": "8ebf7d44.c71c5",
-  "type": "stream",
-  "z": "e5fe838.d55d38",
-  "streamurl": "https://area-51-messages.s3.us-east-2.amazonaws.com/come_sail_away.mp3",
-  "bargein": false,
-  "loop": "0",
-  "level": "",
-  "x": 521,
-  "y": 155,
-  "wires": [
-    ["1f4a7fdf.9f10c"]
-  ]
-}, {
-  "id": "1f4a7fdf.9f10c",
-  "type": "return ncco",
-  "z": "e5fe838.d55d38",
-  "name": "",
-  "x": 713,
-  "y": 154,
-  "wires": []
-}, {
-  "id": "ee6386.70b76c78",
+  "id": "da97a343.1acfc",
   "type": "switch",
-  "z": "e5fe838.d55d38",
+  "z": "b32f0aa8.dc0908",
   "name": "",
   "property": "payload.dtmf",
   "propertyType": "msg",
@@ -224,59 +145,20 @@
     "t": "eq",
     "v": "2",
     "vt": "num"
-  }, {
-    "t": "eq",
-    "v": "9",
-    "vt": "str"
-  }, {
-    "t": "eq",
-    "v": "0",
-    "vt": "str"
   }],
   "checkall": "true",
   "repair": false,
-  "outputs": 4,
-  "x": 307,
-  "y": 160,
+  "outputs": 2,
+  "x": 176,
+  "y": 445,
   "wires": [
-    ["21423005.f3ce4"],
-    ["8ebf7d44.c71c5"],
-    [],
-    ["8ebf7d44.c71c5"]
+    ["7d5ad2b1.c745ec"],
+    ["a8dd7530.c51128"]
   ]
 }, {
-  "id": "54642044.60647",
-  "type": "subflow:c7af81cd.c652f",
-  "z": "6efc31f8.ca128",
-  "name": "",
-  "env": [],
-  "x": 162.5,
-  "y": 67.5,
-  "wires": []
-}, {
-  "id": "8b2c1ebf.9643e",
-  "type": "subflow:c91a852a.8013b8",
-  "z": "6efc31f8.ca128",
-  "name": "",
-  "env": [],
-  "x": 151,
-  "y": 187,
-  "wires": []
-}, {
-  "id": "47eb50a4.3e2ec",
-  "type": "subflow:e5fe838.d55d38",
-  "z": "6efc31f8.ca128",
-  "name": "",
-  "env": [],
-  "x": 160.5,
-  "y": 131,
-  "wires": [
-    ["54642044.60647"]
-  ]
-}, {
-  "id": "a0666c44.65ed1",
+  "id": "bddd888b.5d4838",
   "type": "record",
-  "z": "e5fe838.d55d38",
+  "z": "b32f0aa8.dc0908",
   "channel": "",
   "endonsilence": "",
   "endonkey": "#",
@@ -284,124 +166,137 @@
   "beepstart": true,
   "eventurl": "https://kja.ngrok.io/recordings",
   "eventmethod": "post",
-  "x": 611,
-  "y": 52,
+  "x": 508,
+  "y": 398,
   "wires": [
-    ["1f4a7fdf.9f10c"]
+    ["27515db0.b14ed2"]
   ]
 }, {
-  "id": "21423005.f3ce4",
+  "id": "7d5ad2b1.c745ec",
   "type": "talk",
-  "z": "e5fe838.d55d38",
+  "z": "b32f0aa8.dc0908",
   "text": "Please record your message after the tone. ",
-  "voicename": "Kimberley",
+  "voicename": "Kimberly",
   "bargein": false,
   "loop": "",
   "level": "",
-  "x": 476,
-  "y": 52,
+  "x": 364,
+  "y": 399,
   "wires": [
-    ["a0666c44.65ed1"]
+    ["bddd888b.5d4838"]
   ]
 }, {
-  "id": "6b1119c7.d29468",
+  "id": "a8dd7530.c51128",
+  "type": "talk",
+  "z": "b32f0aa8.dc0908",
+  "text": "Please hold while we connect you.",
+  "voicename": "Kimberly",
+  "bargein": false,
+  "loop": "",
+  "level": "",
+  "x": 366,
+  "y": 461,
+  "wires": [
+    ["2e720e47.ba08e2"]
+  ]
+}, {
+  "id": "2e720e47.ba08e2",
+  "type": "stream",
+  "z": "b32f0aa8.dc0908",
+  "streamurl": "https://area-51-messages.s3.us-east-2.amazonaws.com/come_sail_away.mp3",
+  "bargein": false,
+  "loop": "",
+  "level": "",
+  "x": 507,
+  "y": 461,
+  "wires": [
+    ["27515db0.b14ed2"]
+  ]
+}, {
+  "id": "eb98b86.4528648",
   "type": "http in",
-  "z": "673b7d76.e54bc4",
+  "z": "b32f0aa8.dc0908",
   "name": "",
   "url": "/recordings",
   "method": "post",
   "upload": false,
   "swaggerDoc": "",
-  "x": 142,
-  "y": 159,
+  "x": 123,
+  "y": 736,
   "wires": [
-    ["f8bf77bc.437f38", "58155c2d.459bf4"]
+    ["b660d234.8cf57", "ccf202ce.fcc95"]
   ]
 }, {
-  "id": "8d6d86a3.015438",
+  "id": "b660d234.8cf57",
+  "type": "debug",
+  "z": "b32f0aa8.dc0908",
+  "name": "Recordings",
+  "active": true,
+  "tosidebar": true,
+  "console": false,
+  "tostatus": false,
+  "complete": "payload",
+  "targetType": "msg",
+  "x": 131,
+  "y": 678,
+  "wires": []
+}, {
+  "id": "ccf202ce.fcc95",
+  "type": "getrecording",
+  "z": "b32f0aa8.dc0908",
+  "creds": "64450654.a30388",
+  "filename": "{{msg.payload.recording_uuid}}.mp3",
+  "x": 173,
+  "y": 799,
+  "wires": [
+    ["752ebe0e.e8bc"]
+  ]
+}, {
+  "id": "a01f9693.4c2f38",
   "type": "amazon s3 out",
-  "z": "673b7d76.e54bc4",
-  "aws": "d763956f.dded88",
+  "z": "b32f0aa8.dc0908",
+  "aws": "",
   "bucket": "area-51-messages",
   "filename": "",
   "localFilename": "",
   "region": "us-east-1",
   "name": "",
-  "x": 652,
-  "y": 120,
+  "x": 423,
+  "y": 668,
   "wires": []
 }, {
-  "id": "a299a6cd.96b378",
-  "type": "debug",
-  "z": "673b7d76.e54bc4",
-  "name": "",
-  "active": true,
-  "tosidebar": true,
-  "console": false,
-  "tostatus": false,
-  "complete": "true",
-  "targetType": "full",
-  "x": 381,
-  "y": 218,
-  "wires": []
-}, {
-  "id": "f8bf77bc.437f38",
-  "type": "http response",
-  "z": "673b7d76.e54bc4",
-  "name": "",
-  "statusCode": "204",
-  "headers": {},
-  "x": 353,
-  "y": 80,
-  "wires": []
-}, {
-  "id": "58155c2d.459bf4",
-  "type": "getrecording",
-  "z": "673b7d76.e54bc4",
-  "creds": "64450654.a30388",
-  "filename": "{{msg.payload.recording_uuid}}.mp3",
-  "x": 304,
-  "y": 279,
-  "wires": [
-    ["a299a6cd.96b378", "b1f6dac1.bb2a88"]
-  ]
-}, {
-  "id": "b1f6dac1.bb2a88",
+  "id": "752ebe0e.e8bc",
   "type": "file",
-  "z": "673b7d76.e54bc4",
+  "z": "b32f0aa8.dc0908",
   "name": "Create File",
-  "filename": "",
-  "appendNewline": false,
+  "filename": "{{msg.payload.recording_uuid}}.mp3",
+  "appendNewline": true,
   "createDir": false,
   "overwriteFile": "false",
   "encoding": "binary",
-  "x": 547,
-  "y": 253,
+  "x": 337,
+  "y": 752,
   "wires": [
-    ["1ff65290.df68ed", "8d6d86a3.015438"]
+    ["4df61096.3eb8f", "a01f9693.4c2f38"]
   ]
 }, {
-  "id": "1ff65290.df68ed",
+  "id": "4df61096.3eb8f",
   "type": "file",
-  "z": "673b7d76.e54bc4",
+  "z": "b32f0aa8.dc0908",
   "name": "Delete File",
-  "filename": "",
+  "filename": "{{msg.payload.recording_uuid}}.mp3",
   "appendNewline": true,
   "createDir": false,
   "overwriteFile": "delete",
   "encoding": "none",
-  "x": 782,
-  "y": 251,
+  "x": 389,
+  "y": 801,
   "wires": [
     []
   ]
 }, {
-  "id": "d3371e29.6101a",
-  "type": "subflow:673b7d76.e54bc4",
-  "z": "6efc31f8.ca128",
-  "name": "Handle Recordings",
-  "env": [],
-  "x": 161,
-  "y": 253.5,
-  "wires": []
+  "id": "64450654.a30388",
+  "type": "nexmovoiceapp",
+  "z": "",
+  "name": "Area 51 Call Center"
 }]
