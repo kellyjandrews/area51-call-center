@@ -94,7 +94,7 @@
   "z": "b32f0aa8.dc0908",
   "eventurl": "https://kja.ngrok.io/dtmf",
   "eventmethod": "post",
-  "timeout": "1",
+  "timeout": "10",
   "maxdigits": "",
   "submitonhash": false,
   "x": 456,
