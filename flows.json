@@ -192,7 +192,7 @@
   "id": "8ebf7d44.c71c5",
   "type": "stream",
   "z": "e5fe838.d55d38",
-  "streamurl": "https://nexmo-community.github.io/ncco-examples/assets/voice_api_audio_streaming.mp3",
+  "streamurl": "https://area-51-messages.s3.us-east-2.amazonaws.com/come_sail_away.mp3",
   "bargein": false,
   "loop": "0",
   "level": "",
@@ -206,8 +206,8 @@
   "type": "return ncco",
   "z": "e5fe838.d55d38",
   "name": "",
-  "x": 683,
-  "y": 156,
+  "x": 713,
+  "y": 154,
   "wires": []
 }, {
   "id": "ee6386.70b76c78",
